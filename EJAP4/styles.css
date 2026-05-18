@@ -1,0 +1,97 @@
+:root{
+	--ancho-max:1200px;
+	--espacio:12px;
+}
+
+body{
+	font-family:Segoe UI,Arial,Helvetica,sans-serif;
+	max-width:var(--ancho-max);
+	margin:20px auto;
+	padding:0 12px;
+	color:#222;
+}
+
+header h1{margin:0 0 6px}
+
+#controles{
+	display:flex;gap:18px;
+	align-items:center;
+	margin:12px 0
+}
+
+.selector{
+	padding:6px;
+	border-radius:4px
+}
+
+main{
+	display:flex;
+	flex-wrap:wrap;
+	gap:16px
+}
+
+.widget{
+	flex:1 1 360px;
+	background:#fff;
+	border:1px solid #e0e0e0;
+	padding:12px;
+	border-radius:6px;
+	box-shadow:0 1px 2px rgba(0,0,0,0.04);
+	min-height:320px;
+}
+
+.widget h2{
+	font-size:1rem;
+	margin:0 0 8px
+}
+
+#tabla-acumulada{
+	width:100%;
+	border-collapse:collapse
+}
+#tabla-acumulada th,#tabla-acumulada td{
+	border:1px solid #ddd;padding:8px;
+	text-align:left
+}
+
+footer{
+	margin-top:18px;
+	font-size:0.9rem;
+	color:#666
+}
+
+/* Contenedor fijo para cada canvas(tuve problemas con los graficos al infinito) */
+.medidas-contenedor{
+	display:flex;
+	gap:12px;
+	margin:12px 0 18px
+}
+
+.medida{
+	flex:1 1 180px;background:#fff;
+	border:1px solid #e0e0e0;
+	padding:10px;border-radius:6px;
+	box-shadow:0 1px 2px rgba(0,0,0,0.04);
+	text-align:center
+}
+
+.medida h3{
+	margin:0 0 6px;
+	font-size:0.95rem
+}
+
+.medida .valor{
+	font-weight:700;
+	font-size:1.1rem
+}
+
+.grafico-contenedor{
+	height:300px;
+	position:relative
+}
+
+.grafico-contenedor canvas{
+	width:100% !important;
+	height:100% !important; /* important para override (pa que no baje al infinito) */
+	display:block
+}

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Analisis con Chart.js</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script> <!-- PapaParse (Chart js no lee el csv directo)-->
+</head>
+<body>
+  <header>
+    <h1>Analisis con Chart.js</h1>
+    <p>Frecuencias y Medidas de Tendencia Central</p>
+  </header>
+
+  <section id="controles"> <!-- select de variable -->
+    <label for="selector-variable">Seleccionar variable:</label>
+    <select id="selector-variable" class="selector">
+      <option value="peso">Peso</option>
+      <option value="altura">Altura</option>
+      <option value="velocidad">Velocidad</option>
+      <option value="color">Color</option>
+    </select>
+  </section>
+
+  <!-- medidas de tendencia central -->
+  <section id="medidas-contenedor" class="medidas-contenedor">
+    <div class="medida" id="medida-media">
+      <h3>Media</h3>
+      <div class="valor">—</div>
+    </div>
+    <div class="medida" id="medida-mediana">
+      <h3>Mediana</h3>
+      <div class="valor">—</div>
+    </div>
+    <div class="medida" id="medida-moda">
+      <h3>Moda</h3>
+      <div class="valor">—</div>
+    </div>
+  </section>
+
+  <main> <!-- graficos -->
+    <div class="widget">
+      <h2 id="titulo-barras">Frecuencias absolutas</h2>
+      <div class="grafico-contenedor"><canvas id="barrasCanvas"></canvas></div>
+    </div>
+
+    <div class="widget">
+      <h2 id="titulo-donut">Frecuencias relativas</h2>
+      <div class="grafico-contenedor"><canvas id="donutCanvas"></canvas></div>
+    </div>
+
+    <div class="widget">
+      <h2 id="titulo-poligono">Poligono de frecuencias</h2>
+      <div class="grafico-contenedor"><canvas id="poligonoCanvas"></canvas></div>
+    </div>
+
+    <div class="widget">
+      <h2 id="titulo-acumulada">Frecuencia acumulada</h2>
+      <table id="tabla-acumulada"></table>
+    </div>
+  </main>
+
+  <footer>
+    <p>Fuente:</p>
+    <img src="datos.png" alt="Datos" style="max-width: 100%; height: auto;">
+  </footer> 
+
+  <script src="script.js"></script>
+</body>
+</html>
